@@ -1,3 +1,4 @@
+import './nav.css';
 import React from 'react';
 import {
     Link, 
