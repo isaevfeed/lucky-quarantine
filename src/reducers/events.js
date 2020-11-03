@@ -3,18 +3,17 @@ const events = [
         type: 'sleep',
         subtitle: 'Wake up',
         content: null,
-        time: 'at 8:00am',
+        time: '8:00',
     },
     {
-        type: 'break',
+        type: 'food',
         subtitle: 'Break',
         content: null,
-        time: 'at 8:00am',
+        time: '21:15',
     },
 ];
 
 export default function(state = events, payload) {
-
     switch(payload.type) {
         default:
             return state

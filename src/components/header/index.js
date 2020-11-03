@@ -3,7 +3,7 @@ import React from 'react';
 
 const Header = ({}) => (
     <section className="header">
-        Lucky Quarantine
+        Lucky <span>Quarantine</span>
     </section>
 );
 

@@ -16,12 +16,14 @@ class App extends Component {
 
   render() {
     const events = this.props.events;
+    const images = this.props.images;
+    const colors = this.props.colors;
     return (
       <div className="App">
         <Router>
           <section className="content">
-            <Route exact path="/" component={Home} />
-            <Route exact path="/events" component={() => <Events items={events} />} />
+            <Route exact path="/" component={() => <Home items={events} images={images} colors={colors} />} />
+            <Route exact path="/events" component={() => <Events items={events} images={images} colors={colors} />} />
             <Route exact path="/tasks" />
           </section>
           <Nav />
@@ -34,6 +36,8 @@ class App extends Component {
 function setStateToProps(store) {
   return {
     events: store.evarr,
+    colors: store.colors,
+    images: store.images,
   };
 }
 

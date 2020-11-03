@@ -5,6 +5,10 @@
     padding: 25px 0;
 }
 
+.header>span {
+    color: #C2FFBD;
+}
+
 .header:after {
     position: absolute;
     content: "";
