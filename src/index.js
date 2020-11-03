@@ -6,6 +6,7 @@ import './index.css';
 import App from './components/app';
 import reportWebVitals from './reportWebVitals';
 import reducers from './reducers';
+import * as serviceWorker from './serviceWorker';
 
 const store = createStore(reducers);
 
@@ -17,3 +18,4 @@ ReactDOM.render(
 );
 
 reportWebVitals();
+serviceWorker.register();

@@ -1,24 +1,52 @@
 import './nav.css';
-import React from 'react';
+import React, {useState} from 'react';
 import {
-    Link, 
     BrowserRouter as Router,
     Route,
 } from 'react-router-dom';
+import {
+    faHome, 
+    faCalendarWeek,
+    faTasks,
+    faLock,
+} from '@fortawesome/free-solid-svg-icons';
+import Link from './link';
 
-const Nav = ({}) => (
-    <section className="nav">
-        <Router>
-            <Link to="/">Home</Link>
-            <Link to="/events">Events</Link>
-            <Link to="/tasks">Tasks</Link>
-            <Link to="#">Chat</Link>
-            <Link to="#">Profile</Link>
-            <Route path="/" />
-            <Route path="/events" />
-            <Route path="/events" />
-        </Router>
-    </section>
-);
+const Nav = ({}) => {
+    return (
+        <section className="nav">
+            <Router>
+                <Link 
+                    name="Home"
+                    path="/"
+                    icon={faHome}
+                />
+                <Link 
+                    name="Events"
+                    path="/events"
+                    icon={faCalendarWeek}
+                />
+                <Link 
+                    name="Tasks"
+                    path="/tasks"
+                    icon={faTasks}
+                />
+                <Link 
+                    name="Chat"
+                    path="#"
+                    icon={faLock}
+                />
+                <Link 
+                    name="Profile"
+                    path="#"
+                    icon={faLock}
+                />
+                <Route path="/" />
+                <Route path="/events" />
+                <Route path="/events" />
+            </Router>
+        </section>
+    );
+    };
 
 export default Nav;
