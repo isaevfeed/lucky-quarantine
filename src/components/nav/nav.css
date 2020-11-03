@@ -17,7 +17,8 @@
     padding: 15px;
 }
 
-.nav-item-closed {
+.nav-item-lock {
+    cursor: default;
     color: #565656;
 }
 

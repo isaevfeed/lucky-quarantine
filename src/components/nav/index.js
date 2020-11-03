@@ -15,36 +15,36 @@ import Link from './link';
 const Nav = ({}) => {
     return (
         <section className="nav">
-            <Router>
-                <Link 
-                    name="Home"
-                    path="/"
-                    icon={faHome}
-                />
-                <Link 
-                    name="Events"
-                    path="/events"
-                    icon={faCalendarWeek}
-                />
-                <Link 
-                    name="Tasks"
-                    path="/tasks"
-                    icon={faTasks}
-                />
-                <Link 
-                    name="Chat"
-                    path="#"
-                    icon={faLock}
-                />
-                <Link 
-                    name="Profile"
-                    path="#"
-                    icon={faLock}
-                />
-                <Route path="/" />
-                <Route path="/events" />
-                <Route path="/events" />
-            </Router>
+            <Link 
+                name="Home"
+                path="/"
+                icon={faHome}
+                lock={false}
+            />
+            <Link 
+                name="Events"
+                path="/events"
+                icon={faCalendarWeek}
+                lock={false}
+            />
+            <Link 
+                name="Tasks"
+                path="/tasks"
+                icon={faTasks}
+                lock={false}
+            />
+            <Link 
+                name="Chat"
+                path="#"
+                icon={faLock}
+                lock={true}
+            />
+            <Link 
+                name="Profile"
+                path="#"
+                icon={faLock}
+                lock={true}
+            />
         </section>
     );
     };
