@@ -9,7 +9,7 @@ const events = [
         type: 'food',
         subtitle: 'Break',
         content: null,
-        time: '21:15',
+        time: '21:05',
     },
 ];
 

@@ -8,7 +8,7 @@ const Events = (props) => {
             <div className="event" style={{backgroundColor: props.colors[item.type]}}>
                 <div className="event-top">
                     <div className="event-top-title"><img src={"/images/" + props.images[item.type] + ".png"} />{item.subtitle}</div>
-                    <div className="event-top-time">{timeFormat(item.time)}</div>
+                    <div className="event-top-time"> at {timeFormat(item.time)}</div>
                 </div>
                 {initContent(item.content)}
             </div>

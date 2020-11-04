@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import Nav from '../../components/nav';
 import Home from '../../components/home';
 import Events from '../../components/events';
+import Tasks from '../../components/tasks';
+import TaskForm from '../../components/tasks/task-from';
 import {
     BrowserRouter as Router,
     Route,
@@ -18,14 +20,17 @@ class App extends Component {
     const events = this.props.events;
     const images = this.props.images;
     const colors = this.props.colors;
+    const tasks = this.props.tasks;
+
     return (
       <div className="App">
         <Router>
           <section className="content">
             <Route exact path="/" component={() => <Home items={events} images={images} colors={colors} />} />
             <Route exact path="/events" component={() => <Events items={events} images={images} colors={colors} />} />
-            <Route exact path="/tasks" />
+            <Route exact path="/tasks" component={() => <Tasks tasks={tasks} onComplete={this.props.onComplete} />} />
           </section>
+          <TaskForm />
           <Nav />
         </Router>
       </div>
@@ -36,13 +41,16 @@ class App extends Component {
 function setStateToProps(store) {
   return {
     events: store.evarr,
+    tasks: store.tasks,
     colors: store.colors,
     images: store.images,
   };
 }
 
 function setDispatchToProps(dispatch) {
-  return {};
+  return {
+    onComplete: id => dispatch({type: 'COMPLETE', id})
+  };
 }
 
 export default connect(setStateToProps, setDispatchToProps)(App);
