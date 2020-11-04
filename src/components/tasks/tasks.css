@@ -11,9 +11,103 @@
     box-sizing: border-box;
 }
 
+.tasks-empty-title {
+    color: #555;
+    font-size: 21px;
+    font-weight: normal;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.task-form {
+    width: 100%;
+    position: fixed;
+    bottom: -100px;
+    left: 0px;
+    padding: 15px 20px;
+    background: #2C2C2C;
+    box-sizing: border-box;
+    border-top: 1px solid #000;
+    z-index: 1;
+}
+
+.task-form-close {
+    font-size: 21px;
+    position: absolute;
+    right: 20px;
+    top: -41px;
+    background: #2C2C2C;
+    padding: 8px 25px;
+    border-color: #000;
+    border-style: solid;
+    border-top-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 0px;
+}
+
+.task-form-input {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.task-form-btn {
+    color: #396935;
+    font-size: 18px;
+    text-transform: uppercase;
+    width: 100%;
+    background: #C2FFBD;
+    padding: 15px;
+    border: 0px solid transparent;
+    border-radius: 6px;
+    outline: none;
+}
+
+.task-form-input>input {
+    color: #555;
+    outline: none;
+    font-size: 16px;
+    margin: 0; 
+    padding: 12px 15px;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 6px;
+    border: 0px solid transparent;
+}
+
+.task-form-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.task-form-input-label>input {
+    text-align: center;
+}
+
+.task-form-input-label>label {
+    font-size: 18px;
+}
+
+.task-form-input>input::placeholder {
+    color: #999; 
+}
+
+.task-form-text {
+    width: 100%;
+    margin-right: 15px;
+}
+
+.task-form-num {
+ text-align: right;
+}
+
 .task-complete {
     font-size: 24px;
-    width: 15%;
+    width: 15% 10%;
+    margin-right: 15px;
 }
 
 .task-title {

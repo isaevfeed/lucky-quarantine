@@ -1,59 +1,4 @@
-const tasks = [
-    {
-        id: 1,
-        task: 'Купить хлеба',
-        amount: 3,
-        status: false,
-    },
-    {
-        id: 2,
-        task: 'Задача 2',
-        amount: 0,
-        status: false,
-    },
-    {
-        id: 3,
-        task: 'Задача 3',
-        amount: 3,
-        status: true,
-    },
-    {
-        id: 4,
-        task: 'Задача 3',
-        amount: 3,
-        status: true,
-    },
-    {
-        id: 5,
-        task: 'Задача 3',
-        amount: 3,
-        status: true,
-    },
-    {
-        id: 6,
-        task: 'Задача 3',
-        amount: 3,
-        status: true,
-    },
-    {
-        id: 7,
-        task: 'Задача 3',
-        amount: 3,
-        status: true,
-    },
-    {
-        id: 8,
-        task: 'Задача 3',
-        amount: 3,
-        status: true,
-    },
-    {
-        id: 9,
-        task: 'Задача 3',
-        amount: 3,
-        status: true,
-    },
-];
+const tasks = [];
 
 export default function(state = tasks, payload) {
     if (localStorage && localStorage.getItem('tasks')) {
@@ -62,6 +7,7 @@ export default function(state = tasks, payload) {
             state = JSON.parse(localTasks);
         }
     }
+    console.log(state);
     switch(payload.type) {
         case 'ADD':
             state = [...state, payload.task];

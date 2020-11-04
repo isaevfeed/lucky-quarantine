@@ -5,7 +5,6 @@ import Nav from '../../components/nav';
 import Home from '../../components/home';
 import Events from '../../components/events';
 import Tasks from '../../components/tasks';
-import TaskForm from '../../components/tasks/task-from';
 import {
     BrowserRouter as Router,
     Route,
@@ -28,9 +27,12 @@ class App extends Component {
           <section className="content">
             <Route exact path="/" component={() => <Home items={events} images={images} colors={colors} />} />
             <Route exact path="/events" component={() => <Events items={events} images={images} colors={colors} />} />
-            <Route exact path="/tasks" component={() => <Tasks tasks={tasks} onComplete={this.props.onComplete} />} />
+            <Route exact path="/tasks" component={() => 
+              <Tasks tasks={tasks} 
+                     onComplete={this.props.onComplete} 
+                     onAddTask={this.props.onAddTask} />
+            } />
           </section>
-          <TaskForm />
           <Nav />
         </Router>
       </div>
@@ -49,7 +51,8 @@ function setStateToProps(store) {
 
 function setDispatchToProps(dispatch) {
   return {
-    onComplete: id => dispatch({type: 'COMPLETE', id})
+    onComplete: id => dispatch({type: 'COMPLETE', id}),
+    onAddTask: task => dispatch({type: 'ADD', task}),
   };
 }
 
