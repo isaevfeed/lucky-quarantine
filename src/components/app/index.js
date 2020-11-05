@@ -30,7 +30,8 @@ class App extends Component {
             <Route exact path="/tasks" component={() => 
               <Tasks tasks={tasks} 
                      onComplete={this.props.onComplete} 
-                     onAddTask={this.props.onAddTask} />
+                     onAddTask={this.props.onAddTask} 
+                     onClearTasks={this.props.onClearTasks} />
             } />
           </section>
           <Nav />
@@ -53,6 +54,7 @@ function setDispatchToProps(dispatch) {
   return {
     onComplete: id => dispatch({type: 'COMPLETE', id}),
     onAddTask: task => dispatch({type: 'ADD', task}),
+    onClearTasks: () => dispatch({type: 'CLEAR'}),
   };
 }
 

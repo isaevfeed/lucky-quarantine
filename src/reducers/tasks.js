@@ -7,7 +7,7 @@ export default function(state = tasks, payload) {
             state = JSON.parse(localTasks);
         }
     }
-    console.log(state);
+    
     switch(payload.type) {
         case 'ADD':
             state = [...state, payload.task];
@@ -21,6 +21,10 @@ export default function(state = tasks, payload) {
                 return task;
             });
             saveTaskInStorage(state)
+            return state;
+        case 'CLEAR':
+            localStorage.clear();
+            state = [];
             return state;
         default:
             saveTaskInStorage(state)

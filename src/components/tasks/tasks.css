@@ -11,6 +11,55 @@
     box-sizing: border-box;
 }
 
+.tasks-warning-popup {
+    display: none;
+    color: #333;
+    position: fixed;
+    min-width: 90%;
+    text-align: center;
+    background: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.tasks-warning-popup-img {
+    padding-top: 20px;
+}
+
+.tasks-warning-popup-message {
+    padding: 20px;    
+}
+
+.tasks-warning-popup-btns {
+    display: flex;
+}
+
+.tasks-warning-popup-btn {
+    cursor: pointer;
+    font-size: 21px;
+    text-transform: uppercase;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    border: 0px solid transparent;
+}
+
+.tasks-clear-btn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #C2FFBD;
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+}
+
 .tasks-empty-title {
     color: #555;
     font-size: 21px;
