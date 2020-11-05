@@ -23,8 +23,18 @@ export default function(state = tasks, payload) {
             saveTaskInStorage(state)
             return state;
         case 'CLEAR':
-            localStorage.clear();
+            localStorage.setItem('tasksHistory', JSON.stringify([]));
+            state.map(task => {
+                let history = JSON.parse(localStorage.getItem('tasksHistory'));
+                
+                if (history.indexOf(task.title) === -1) {
+                    history.push(task.title);
+                }
+
+                localStorage.setItem('tasksHistory', JSON.stringify(history));
+            });
             state = [];
+            localStorage.setItem('tasks', JSON.stringify(state));
             return state;
         default:
             saveTaskInStorage(state)

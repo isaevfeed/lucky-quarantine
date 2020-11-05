@@ -97,9 +97,43 @@
 }
 
 .task-form-input {
+    position: relative;
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 10px;
+}
+
+.task-form-input-history {
+    color: #333;
+    display: none;
+    position: absolute;
+    max-height: 215px;
+    width: 70%;
+    left: 0px;
+    bottom: 45px;
+    padding: 10px 15px;
+    margin: 0;
+    background: #fff; 
+    border-radius: 6px;
+    box-sizing: border-box;
+    overflow: scroll;
+}
+
+.task-form-input-history>li {
+    display: block;
+    list-style: none;
+    padding: 10px 0px;
+    margin: 0;
+    border-bottom: 1px solid #d9d9d9;
+    box-sizing: border-box;
+}
+
+.task-form-input-history>li:active {
+    background: #f9f9f9;
+}
+
+.task-form-input-history>li:last-child {
+    border-bottom: 0px solid transparent;
 }
 
 .task-form-btn {
