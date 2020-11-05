@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {faChevronUp, faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import tasks from '../../reducers/tasks';
 
 const TaskForm = props => {
     let [isVisible, setVisible] = useState(false);
@@ -85,24 +84,45 @@ function onShowHistory(e) {
     const tasksHistory = JSON.parse(localStorage.getItem('tasksHistory'));
     let ulContent = '';
 
-    let resHistory = tasksHistory.filter(item => {
-        if (item.search(e.target.value) != -1) {
-            ulContent += '<li>' + item + '</li>';
-            return item;
-        }
-    });
-
-    history.innerHTML = ulContent;
-
-    if (resHistory.length !== 0) {
-        if (e.target.value === '') {
-            history.style.display = 'none';
+    if (tasksHistory) {
+        let resHistory = tasksHistory.filter(item => {
+            let val = e.target.value;
+    
+            if (val.search(/[\*\+\)\(\&\[\]\)\$\%\#]/) !== -1) {
+                val = '';
+            }
+    
+            if (val !== '') {
+                if (item.toLowerCase().search(val.toLowerCase()) != -1) {
+                    ulContent += '<li>' + item + '</li>';
+                    return item;
+                }
+            }
+        });
+    
+        history.innerHTML = ulContent;
+    
+        if (resHistory.length !== 0) {
+            if (e.target.value === '') {
+                history.style.display = 'none';
+            } else {
+                history.style.display = 'block';
+            }
         } else {
-            history.style.display = 'block';
+            history.style.display = 'none';
         }
-    } else {
-        history.style.display = 'none';
+    
+        for (let i = 0; i < history.children.length; i++) {
+            history.children[i].addEventListener('click', onSetTaskText);
+        }
     }
+}
+
+function onSetTaskText(e) {
+    const history = document.querySelector('#task-input-history');
+    const input = document.querySelector('#title');
+    input.value = e.target.textContent;
+    history.style.display = 'none';
 }
 
 export default TaskForm;

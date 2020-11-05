@@ -4,7 +4,6 @@ import React from 'react';
 const Home = (props) => setHomeImage(props.items, props.images);
 
 function setHomeImage(events, images) {
-    console.log(events);
     for (let i = 0; i < events.length; i++) {
         let time = Date.parse('01/01/2011 ' + events[i].time + ':00');
         let current = Date.parse('01/01/2011 ' + currentTimeFormat() + ':00');

@@ -120,6 +120,7 @@
 }
 
 .task-form-input-history>li {
+    cursor: pointer;
     display: block;
     list-style: none;
     padding: 10px 0px;
