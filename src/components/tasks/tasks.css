@@ -78,7 +78,6 @@
     background: #2C2C2C;
     box-sizing: border-box;
     border-top: 1px solid #000;
-    z-index: 1;
 }
 
 .task-form-close {
