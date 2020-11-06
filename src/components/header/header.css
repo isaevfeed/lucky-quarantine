@@ -1,0 +1,22 @@
+.header {
+    position: relative;
+    font-size: 24px;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.header>span {
+    color: #C2FFBD;
+}
+
+.header:after {
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: #464646;
+    width: 90%;
+    height: 1px;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
