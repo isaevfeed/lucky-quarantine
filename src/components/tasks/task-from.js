@@ -50,8 +50,8 @@ function submitForm(e, tasksCount, onAddTask) {
 
 function switchForm(e, isVisible, setVisible) {
     const form = document.querySelector('#task-form');
-    const unVisibleBot = -100;
-    const visibleBot = 80;
+    const unVisibleBot = -80;
+    const visibleBot = 100;
     let count, step = 4;
 
     if (!isVisible) {
