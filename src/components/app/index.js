@@ -25,9 +25,9 @@ class App extends Component {
       <div className="App">
         <Router>
           <section className="content">
-            <Route exact path="/" component={() => <Home items={events} images={images} colors={colors} />} />
+            <Route exact path="/home" component={() => <Home items={events} images={images} colors={colors} />} />
             <Route exact path="/events" component={() => <Events items={events} images={images} colors={colors} />} />
-            <Route exact path="/tasks" component={() => 
+            <Route exact path="/" component={() => 
               <Tasks tasks={tasks} 
                      onComplete={this.props.onComplete} 
                      onAddTask={this.props.onAddTask} 

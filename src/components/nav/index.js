@@ -16,8 +16,14 @@ const Nav = ({}) => {
     return (
         <section className="nav">
             <Link 
-                name="Home"
+                name="Tasks"
                 path="/"
+                icon={faTasks}
+                lock={false}
+            />
+            <Link 
+                name="Home"
+                path="/home"
                 icon={faHome}
                 lock={false}
             />
@@ -25,12 +31,6 @@ const Nav = ({}) => {
                 name="Events"
                 path="/events"
                 icon={faCalendarWeek}
-                lock={false}
-            />
-            <Link 
-                name="Tasks"
-                path="/tasks"
-                icon={faTasks}
                 lock={false}
             />
             <Link 
