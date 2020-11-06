@@ -116,7 +116,6 @@
     background: #fff; 
     border-radius: 6px;
     box-sizing: border-box;
-    overflow: scroll;
 }
 
 .task-form-input-history>li {

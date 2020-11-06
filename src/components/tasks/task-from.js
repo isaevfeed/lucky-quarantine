@@ -99,6 +99,12 @@ function onShowHistory(e) {
                 }
             }
         });
+
+        if (resHistory.length > 5) {
+            history.style.overflowY = 'scroll';
+        } else {
+            history.style.overflowY = 'hidden';
+        }
     
         history.innerHTML = ulContent;
     
