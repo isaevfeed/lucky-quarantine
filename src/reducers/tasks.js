@@ -12,7 +12,7 @@ export default function(state = tasks, payload) {
         case 'ADD':
             state = [...state, payload.task];
             saveTaskInStorage(state)
-            return state;
+            break;
         case 'COMPLETE':
             state = state.map(task => {
                 if (task.id == payload.id) {
@@ -21,7 +21,7 @@ export default function(state = tasks, payload) {
                 return task;
             });
             saveTaskInStorage(state)
-            return state;
+            break;
         case 'CLEAR':
             localStorage.setItem('tasksHistory', JSON.stringify([]));
             state.map(task => {
@@ -35,11 +35,24 @@ export default function(state = tasks, payload) {
             });
             state = [];
             localStorage.setItem('tasks', JSON.stringify(state));
-            return state;
+            break;
         default:
             saveTaskInStorage(state)
-            return state;
+            return state.sort(sortCompare);
     }
+
+    return state.sort(sortCompare);
+}
+
+function sortCompare(a, b) {
+    const statusA = +a.status;
+    const statusB = +b.status;
+
+    if (statusA < statusB) {
+        return -1;
+    } 
+
+    return 1;
 }
 
 function saveTaskInStorage(state) {
