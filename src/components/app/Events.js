@@ -1,4 +1,4 @@
-import './events.css';
+import './Events.css';
 import React from 'react';
 
 const Events = (props) => {

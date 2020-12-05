@@ -1,4 +1,4 @@
-import './home.css';
+import './Home.css';
 import React from 'react';
 
 const Home = (props) => setHomeImage(props.items, props.images);

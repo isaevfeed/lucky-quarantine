@@ -1,7 +1,7 @@
-import './tasks.css';
+import './Tasks.css';
 import React from 'react';
 import Task from './task';
-import TaskForm from '../../components/tasks/task-from';
+import TaskForm from './TaskForm';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 

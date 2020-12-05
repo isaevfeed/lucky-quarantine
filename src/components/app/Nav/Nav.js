@@ -1,4 +1,4 @@
-import './nav.css';
+import './Nav.css';
 import React from 'react';
 import {
     faHome, 
@@ -6,7 +6,7 @@ import {
     faTasks,
     faLock,
 } from '@fortawesome/free-solid-svg-icons';
-import Link from './link';
+import Link from './Link';
 
 const Nav = ({}) => {
     return (

@@ -1,4 +1,4 @@
-import './App.css';
+import './index.css';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -9,11 +9,11 @@ import {
     Switch
 } from 'react-router-dom';
 import {array, object} from 'prop-types';
-import Nav from '../../components/nav';
-import Home from '../../components/home';
-import Events from '../../components/events';
-import Tasks from '../../components/tasks';
-import Header from '../../components/header';
+import Header from './Header';
+import Home from './Home';
+import Events from './Events';
+import Tasks from './Tasks';
+import Nav from './Nav/Nav.js';
 
 class App extends Component {
   constructor(props) {
