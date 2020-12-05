@@ -51,7 +51,7 @@ class App extends Component {
                       onComplete={this.props.onComplete} 
                       onAddTask={this.props.onAddTask} 
                       onClearTasks={this.props.onClearTasks} />
-              } />
+              } exact />
             </section>
             <Nav />
           </Router>
