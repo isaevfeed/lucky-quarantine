@@ -1,17 +1,19 @@
 import './App.css';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Nav from '../../components/nav';
-import Home from '../../components/home';
-import Events from '../../components/events';
-import Tasks from '../../components/tasks';
-import Header from '../../components/header';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCircleNotch} from '@fortawesome/free-solid-svg-icons';
 import {
     BrowserRouter as Router,
     Route,
+    Switch
 } from 'react-router-dom';
+import {array, object} from 'prop-types';
+import Nav from '../../components/nav';
+import Home from '../../components/home';
+import Events from '../../components/events';
+import Tasks from '../../components/tasks';
+import Header from '../../components/header';
 
 class App extends Component {
   constructor(props) {
@@ -44,15 +46,18 @@ class App extends Component {
         <div className="App">
           <Router>
             <section className="content">
-              <Route exact path="/home" component={() => <Home items={events} images={images} colors={colors} />} />
-              <Route exact path="/events" component={() => <Events items={events} images={images} colors={colors} />} />
-              <Route exact path="/" component={() => 
-                <Tasks 
-                  tasks={tasks} 
-                  onComplete={this.props.onComplete}                   onAddTask={this.props.onAddTask} 
-                  onClearTasks={this.props.onClearTasks} 
-                  />
-              } exact />
+              <Switch>
+                <Route exact path="/" component={() => <Home items={events} images={images} colors={colors} />}  />
+                <Route exact path="/events" component={() => <Events items={events} images={images} colors={colors} />} />
+                <Route exact path="/tasks" component={() => 
+                  <Tasks 
+                    tasks={tasks} 
+                    onComplete={this.props.onComplete}                   
+                    onAddTask={this.props.onAddTask} 
+                    onClearTasks={this.props.onClearTasks} 
+                    />
+                } />
+              </Switch>
             </section>
             <Nav />
           </Router>
@@ -61,6 +66,13 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  events: array,
+  images: object,
+  colors: object,
+  tasks: array,
+};
 
 function setStateToProps(store) {
   return {

@@ -1,9 +1,5 @@
 import './nav.css';
-import React, {useState} from 'react';
-import {
-    BrowserRouter as Router,
-    Route,
-} from 'react-router-dom';
+import React from 'react';
 import {
     faHome, 
     faCalendarWeek,
@@ -16,15 +12,15 @@ const Nav = ({}) => {
     return (
         <section className="nav">
             <Link 
-                name="Tasks"
+                name="Home"
                 path="/"
-                icon={faTasks}
+                icon={faHome}
                 lock={false}
             />
             <Link 
-                name="Home"
-                path="/home"
-                icon={faHome}
+                name="Tasks"
+                path="/tasks"
+                icon={faTasks}
                 lock={false}
             />
             <Link 
@@ -47,6 +43,6 @@ const Nav = ({}) => {
             />
         </section>
     );
-    };
+};
 
 export default Nav;
