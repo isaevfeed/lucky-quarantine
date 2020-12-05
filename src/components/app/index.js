@@ -47,10 +47,11 @@ class App extends Component {
               <Route exact path="/home" component={() => <Home items={events} images={images} colors={colors} />} />
               <Route exact path="/events" component={() => <Events items={events} images={images} colors={colors} />} />
               <Route exact path="/" component={() => 
-                <Tasks tasks={tasks} 
-                      onComplete={this.props.onComplete} 
-                      onAddTask={this.props.onAddTask} 
-                      onClearTasks={this.props.onClearTasks} />
+                <Tasks 
+                  tasks={tasks} 
+                  onComplete={this.props.onComplete}                   onAddTask={this.props.onAddTask} 
+                  onClearTasks={this.props.onClearTasks} 
+                  />
               } exact />
             </section>
             <Nav />
