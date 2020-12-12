@@ -1,4 +1,4 @@
-.preloader {
+.Preloader {
     font-size: 40px;
     display: flex;
     position: absolute;
@@ -11,10 +11,10 @@
     align-items: center;
 }
 
-.preloader-text {
+.Preloader-text {
     margin-bottom: 15px;
 }
 
-.preloader-text-span {
+.Preloader-text-span {
     color: #C2FFBD;
 }

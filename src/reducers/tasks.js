@@ -7,7 +7,6 @@ import {
 const tasks = [];
 
 export default function(state = tasks, action) {
-    console.log(action);
     if (localStorage && localStorage.getItem('tasks')) {
         const localTasks = localStorage.getItem('tasks');
         if (localTasks != '' && localTasks != '[]') {

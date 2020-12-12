@@ -1,8 +1,5 @@
-import './App.css';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faCircleNotch} from '@fortawesome/free-solid-svg-icons';
 import {
     BrowserRouter as Router,
     Route,
@@ -14,6 +11,7 @@ import {
   completeTask,
   clearTasks,
 } from '../../reducers/actions/tasks-action';
+import Preloader from './Preloader';
 import Header from './Header';
 import Home from './Home';
 import Events from './Events';
@@ -27,7 +25,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({isLoading: false});
+    setTimeout(_ => this.setState({isLoading: false}), 1000);
   }
 
   render() {
@@ -37,12 +35,7 @@ class App extends Component {
     const tasks = this.props.tasks;
 
     if (this.state.isLoading) {
-      return (
-        <div className="preloader">
-          <div className="preloader-text">L<span className="preloader-text-span">Q</span></div>
-          <FontAwesomeIcon icon={faCircleNotch} pulse />
-        </div>
-      );
+      return <Preloader />;
     }
 
     return (

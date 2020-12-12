@@ -25,9 +25,9 @@ function setHomeImage(events, images) {
     const subtitle = localStorage.getItem('subtitle');
 
     return (
-        <div className="current-day">
-            <img className="current-day-img" src={"/images/"+images[type]+".png"} />
-            <h4 className="current-day-title">{subtitle}</h4>
+        <div className="Home_current-day">
+            <img className="Home_current-day-img" src={"/images/"+images[type]+".png"} />
+            <h4 className="Home_current-day-title">{subtitle}</h4>
         </div>
     );
 }

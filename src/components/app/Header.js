@@ -2,7 +2,7 @@ import './Header.css';
 import React from 'react';
 
 const Header = ({}) => (
-    <section className="header">
+    <section className="Header">
         Lucky <span>Quarantine</span>
     </section>
 );
