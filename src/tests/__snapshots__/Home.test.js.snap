@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home Snapshot 1`] = `
+<div
+  className="Home_current-day"
+>
+  <img
+    className="Home_current-day-img"
+    src="/images/clock.png"
+  />
+  <h4
+    className="Home_current-day-title"
+  >
+    Wake up
+  </h4>
+</div>
+`;

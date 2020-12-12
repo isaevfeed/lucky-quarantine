@@ -2,18 +2,7 @@
 
 exports[`Header Snapshot:  1`] = `
 <section
-  className="header"
->
-  Lucky 
-  <span>
-    Quarantine
-  </span>
-</section>
-`;
-
-exports[`Header:  1`] = `
-<section
-  className="header"
+  className="Header"
 >
   Lucky 
   <span>
