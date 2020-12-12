@@ -1,4 +1,4 @@
-export const images = {
+const images = {
     'food': 'burger',
     'break': 'clock',
     'sleep': 'clock',

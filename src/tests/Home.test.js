@@ -1,6 +1,5 @@
 import ReactDOM from 'react-dom';
 import Home from '../components/App/Home';
-import {images} from '../reducers/images';
 import renderer from 'react-test-renderer';
 
 const testEventsData = [
@@ -12,7 +11,16 @@ const testEventsData = [
     },
 ];
 
-const TestEventComponent = () => <Home items={testEventsData} images={images} />;
+const testImagesData = {
+    'food': 'burger',
+    'break': 'clock',
+    'sleep': 'clock',
+    'task': 'puzzle-pieces',
+    'lesson': 'contract',
+    'job' : 'salary',
+};
+
+const TestEventComponent = () => <Home items={testEventsData} images={testImagesData} />;
 
 it('Home (render without crashing', () => {
     const div = document.createElement('div');
