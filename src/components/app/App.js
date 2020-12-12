@@ -1,4 +1,4 @@
-import './index.css';
+import './App.css';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
