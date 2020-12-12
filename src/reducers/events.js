@@ -13,8 +13,8 @@ const events = [
     },
 ];
 
-export default function(state = events, payload) {
-    switch(payload.type) {
+export default function(state = events, action) {
+    switch(action.type) {
         default:
             return state
     }

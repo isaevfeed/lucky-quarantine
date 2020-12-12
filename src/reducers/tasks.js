@@ -1,6 +1,13 @@
+import {
+    addTask,
+    completeTask,
+    clearTasks,
+} from './actions/tasks-action';
+
 const tasks = [];
 
-export default function(state = tasks, payload) {
+export default function(state = tasks, action) {
+    console.log(action);
     if (localStorage && localStorage.getItem('tasks')) {
         const localTasks = localStorage.getItem('tasks');
         if (localTasks != '' && localTasks != '[]') {
@@ -8,27 +15,27 @@ export default function(state = tasks, payload) {
         }
     }
     
-    switch(payload.type) {
-        case 'ADD':
-            state = [...state, payload.task];
+    switch(action.type) {
+        case addTask.toString():
+            state = [...state, action.payload];
             saveTaskInStorage(state)
             break;
-        case 'COMPLETE':
+        case completeTask.toString():
             state = state.map(task => {
-                if (task.id == payload.id) {
+                if (task.id == action.payload) {
                     task.status = !task.status;
                 }
                 return task;
             });
             saveTaskInStorage(state)
             break;
-        case 'CLEAR':
+        case clearTasks.toString():
             localStorage.setItem('tasksHistory', JSON.stringify([]));
             state.map(task => {
                 let history = JSON.parse(localStorage.getItem('tasksHistory'));
                 
-                if (history.indexOf(task.title) === -1) {
-                    history.push(task.title);
+                if (history.indexOf(task.payload) === -1) {
+                    history.push(task.payload);
                 }
 
                 localStorage.setItem('tasksHistory', JSON.stringify(history));

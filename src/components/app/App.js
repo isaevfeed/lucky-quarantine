@@ -9,6 +9,11 @@ import {
     Switch
 } from 'react-router-dom';
 import {array, object} from 'prop-types';
+import {
+  addTask,
+  completeTask,
+  clearTasks,
+} from '../../reducers/actions/tasks-action';
 import Header from './Header';
 import Home from './Home';
 import Events from './Events';
@@ -85,9 +90,9 @@ function setStateToProps(store) {
 
 function setDispatchToProps(dispatch) {
   return {
-    onComplete: id => dispatch({type: 'COMPLETE', id}),
-    onAddTask: task => dispatch({type: 'ADD', task}),
-    onClearTasks: () => dispatch({type: 'CLEAR'}),
+    onComplete: id => dispatch(completeTask(id)),
+    onAddTask: task => dispatch(addTask(task)),
+    onClearTasks: () => dispatch(clearTasks()),
   };
 }
 
