@@ -5,7 +5,8 @@ import TaskForm from './TaskForm';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
-const Tasks = props => (
+const Tasks = props => {
+    return (
     <div className="tasks">
         <div className="tasks-clear-btn" onClick={onOpenWarningPopup}>
             <FontAwesomeIcon icon={faTrash}/>
@@ -24,6 +25,7 @@ const Tasks = props => (
             <h4 className="tasks-empty-title">Have nothing tasks</h4>
         }
         <TaskForm tasksCount={props.tasks.length} onAddTask={props.onAddTask} />
+            <button onClick={() => props.testFunc("test text")}>testbtn</button>
         <div id="tasks-warning-popup" className="tasks-warning-popup">
             <div className="tasks-warning-popup-img">
                 <img src="/images/warning.png" />
@@ -43,7 +45,8 @@ const Tasks = props => (
             </div>
         </div>
     </div>
-);
+)
+};
 
 function onOpenWarningPopup() {
     const popup = document.querySelector('#tasks-warning-popup');

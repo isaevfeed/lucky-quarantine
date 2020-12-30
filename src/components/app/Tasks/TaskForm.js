@@ -1,16 +1,19 @@
 import React, {useState} from 'react';
 import {faChevronUp, faChevronDown, faRoad} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {useHistory} from 'react-router-dom';
+import {Button} from '@material-ui/core';
 
 const TaskForm = props => {
     let [isVisible, setVisible] = useState(false);
+    let history = useHistory();
 
     return (
         <div id="task-form" className="task-form">
             <div className="task-form-close" onClick={(e) => switchForm(e, isVisible, setVisible)}>
                 <FontAwesomeIcon icon={isVisible ? faChevronDown : faChevronUp} />
             </div>
-            <form action="" onSubmit={(e) => submitForm(e, props.tasksCount, props.onAddTask)}>
+            <form action="" onSubmit={(e) => submitForm(e, props.tasksCount, props.onAddTask, history)}>
                 <div className="task-form-input">
                     <input 
                         id="title" className="task-form-text" placeholder="Суть задачи" type="text" autoComplete="off"
@@ -22,13 +25,16 @@ const TaskForm = props => {
                     <label htmlFor="amount">Количество: </label>
                     <input id="amount" className="task-form-num" type="number" min="0" max="10" />
                 </div>
-                <button className="task-form-btn">добавить</button>
+                {/* <button className="task-form-btn">добавить</button> */}
+                <Button variant="contained" color="primary">
+                    Добавить
+                </Button>
             </form>
         </div>
     );
 };
 
-function submitForm(e, tasksCount, onAddTask) {
+function submitForm(e, tasksCount, onAddTask, history) {
     e.preventDefault();
 
     const title = document.getElementById('title').value;
@@ -45,6 +51,8 @@ function submitForm(e, tasksCount, onAddTask) {
             status: false,
         })
     }
+
+    history.push('/');
 
     return false;
 }

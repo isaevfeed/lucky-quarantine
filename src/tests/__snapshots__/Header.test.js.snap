@@ -4,9 +4,6 @@ exports[`Header Snapshot:  1`] = `
 <section
   className="Header"
 >
-  Lucky 
-  <span>
-    Quarantine
-  </span>
+  Lucky Quarantine
 </section>
 `;

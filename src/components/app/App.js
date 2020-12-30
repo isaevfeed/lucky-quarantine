@@ -21,11 +21,16 @@ import Nav from './Nav/Nav.js';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {isLoading: true};
+    this.state = {isLoading: true, testText: ""};
+    this.testFunc = this.testFunc.bind(this);
   }
 
   componentDidMount() {
     setTimeout(_ => this.setState({isLoading: false}), 1000);
+  }
+
+  testFunc(text) {
+    this.setState({testText: text});
   }
 
   render() {
@@ -33,10 +38,13 @@ class App extends Component {
     const images = this.props.images;
     const colors = this.props.colors;
     const tasks = this.props.tasks;
+    let {testFunc} = this;
+    
+    console.log(this.state.testText);
 
-    if (this.state.isLoading) {
-      return <Preloader />;
-    }
+    // if (this.state.isLoading) {
+    //   return <Preloader />;
+    // }
 
     return (
       <div>
@@ -53,6 +61,7 @@ class App extends Component {
                     onComplete={this.props.onComplete}                   
                     onAddTask={this.props.onAddTask} 
                     onClearTasks={this.props.onClearTasks} 
+                    testFunc={testFunc}
                     />
                 } />
               </Switch>
