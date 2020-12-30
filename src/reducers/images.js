@@ -7,8 +7,8 @@ const images = {
     'job' : 'salary',
 };
 
-export default function(state = images, payload) {
-    switch(payload.type) {
+export default function(state = images, action) {
+    switch(action.type) {
         default:
             return state;
     }

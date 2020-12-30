@@ -1,4 +1,4 @@
-.current-day {
+.Home_current-day {
     display: flex;
     position: absolute;
     flex-direction: column;
@@ -7,11 +7,11 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.current-day-img {
+.Home_current-day-img {
     width: 175px;
     margin-bottom: 20px;
 }
-.current-day-title {
+.Home_current-day-title {
     font-size: 24px;
     font-weight: normal;
     padding: 0;

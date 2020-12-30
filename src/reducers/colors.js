@@ -7,8 +7,8 @@ const colors = {
     'job' : '#FFBDBD',
 };
 
-export default function(state = colors, payload) {
-    switch(payload.type) {
+export default function(state = colors, action) {
+    switch(action.type) {
         default: 
             return state;
     }

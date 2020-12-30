@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {faChevronUp, faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import {faChevronUp, faChevronDown, faRoad} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 const TaskForm = props => {
     let [isVisible, setVisible] = useState(false);
+
     return (
         <div id="task-form" className="task-form">
             <div className="task-form-close" onClick={(e) => switchForm(e, isVisible, setVisible)}>
