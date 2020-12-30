@@ -2,7 +2,7 @@ import React from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faCheckSquare} from '@fortawesome/free-solid-svg-icons';
 import {faSquare} from '@fortawesome/free-regular-svg-icons';
-
+ 
 const Task = props => (
     <div className="task" onClick={() => props.onComplete(props.id)} style={{borderColor: props.status ? '#79E370' : '#d0d0d0'}}>
         <div className="task-complete" style={props.status ? {color: '#79E370'} : {}}>

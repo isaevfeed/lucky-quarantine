@@ -3,6 +3,7 @@ import {
     completeTask,
     clearTasks,
 } from './actions/tasks-action';
+import sortCompare from './funcs/sort-compare';
 
 const tasks = [];
 
@@ -50,16 +51,7 @@ export default function(state = tasks, action) {
     return state.sort(sortCompare);
 }
 
-function sortCompare(a, b) {
-    const statusA = +a.status;
-    const statusB = +b.status;
 
-    if (statusA < statusB) {
-        return -1;
-    } 
-
-    return 1;
-}
 
 function saveTaskInStorage(state) {
     localStorage.setItem('tasks', JSON.stringify(state));

@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import Home from '../components/App/Home';
+import Home from '../components/Home';
 import renderer from 'react-test-renderer';
 
 const testEventsData = [
@@ -22,13 +22,15 @@ const testImagesData = {
 
 const TestEventComponent = () => <Home items={testEventsData} images={testImagesData} />;
 
-it('Home (render without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<TestEventComponent />, div);
-    ReactDOM.unmountComponentAtNode(div);
-});
-
-it('Home Snapshot', () => {
-    const snap = renderer.create(<TestEventComponent />).toJSON();
-    expect(snap).toMatchSnapshot();
+describe('Home', () => {
+    it('render without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(<TestEventComponent />, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
+    
+    it('Snapshot', () => {
+        const snap = renderer.create(<TestEventComponent />).toJSON();
+        expect(snap).toMatchSnapshot();
+    });
 });

@@ -10,7 +10,7 @@ import {
   addTask,
   completeTask,
   clearTasks,
-} from '../../reducers/actions/tasks-action';
+} from '../reducers/actions/tasks-action';
 import Preloader from './Preloader';
 import Header from './Header';
 import Home from './Home';
