@@ -25,10 +25,7 @@ const TaskForm = props => {
                     <label htmlFor="amount">Количество: </label>
                     <input id="amount" className="task-form-num" type="number" min="0" max="10" />
                 </div>
-                {/* <button className="task-form-btn">добавить</button> */}
-                <Button variant="contained" color="primary">
-                    Добавить
-                </Button>
+                <button className="task-form-btn">добавить</button>
             </form>
         </div>
     );

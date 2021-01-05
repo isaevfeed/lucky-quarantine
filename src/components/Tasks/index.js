@@ -25,7 +25,6 @@ const Tasks = props => {
             <h4 className="tasks-empty-title">Have nothing tasks</h4>
         }
         <TaskForm tasksCount={props.tasks.length} onAddTask={props.onAddTask} />
-            <button onClick={() => props.testFunc("test text")}>testbtn</button>
         <div id="tasks-warning-popup" className="tasks-warning-popup">
             <div className="tasks-warning-popup-img">
                 <img src="/images/warning.png" />
